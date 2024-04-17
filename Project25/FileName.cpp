@@ -3,6 +3,7 @@
 using namespace std;
 int upper = 0;
 int lower = 0;
+int words = 1;
 int count_letters(string str);
 int count_words(string str);
 int main()
@@ -11,7 +12,7 @@ int main()
 	cout << "Enter your string" << endl;
 	getline(cin, str);
 	count_letters(str);
-	//count_words(str);
+	count_words(str);
 }
 int count_letters(string str)
 {
@@ -26,9 +27,20 @@ int count_letters(string str)
 			lower++;
 		}
 	}
-
 	cout << "The number of uppercase letters is: " << upper << endl;
 	cout << "The number of lowercase letters is: " << lower << endl;
 	return upper;
 	return lower;
+}
+int count_words(string str)
+{
+	for (int i = 0; str[i]; i++)
+	{
+		if (str[i] == ' ')
+		{
+			words++;
+		}
+	}
+	cout << "There are " << words << " words" << endl;
+	return words;
 }
